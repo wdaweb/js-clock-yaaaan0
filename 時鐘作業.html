@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Homemade+Apple&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        background: cornsilk;
+        /* background: linear-gradient(170deg, cornsilk 50%, #dd9797 100%); */
+        margin: 0;
+        font-family: "Roboto Mono", monospace;
+        color: #ca2323;
+      }
+      .h-100 {
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .items {
+        width: 300px;
+        height: 300px;
+        /* border: 1px solid #000000; */
+        position: relative;
+        /* display: inline-block; */
+      }
+
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .flower {
+        width: 150px;
+        height: 150px;
+        border-radius: 40% 50% 50% 40%/40% 45% 50% 50%;
+        position: absolute;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .flower:nth-child(odd) {
+        background: rgba(216, 111, 92, 0.5);
+      }
+
+      .flower:nth-child(even) {
+        background: rgba(216, 142, 92, 0.5);
+      }
+
+      .flower1 {
+        top: -60px;
+        left: 60px;
+      }
+
+      .flower2 {
+        top: -30px;
+        left: 160px;
+      }
+
+      .flower3 {
+        top: 60px;
+        left: 200px;
+      }
+
+      .flower4 {
+        top: 160px;
+        left: 170px;
+      }
+
+      .flower5 {
+        top: 200px;
+        left: 80px;
+      }
+
+      .flower6 {
+        top: 170px;
+        left: -10px;
+      }
+
+      .flower7 {
+        top: 80px;
+        left: -50px;
+      }
+
+      .flower8 {
+        top: -10px;
+        left: -20px;
+      }
+
+      .circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        position: absolute;
+        /* top: 50%;
+        left: 50%; */
+        background: linear-gradient(#fff8dc 50%, #f3edd6 100%);
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.2);
+        animation: animation 25s linear infinite;
+      }
+
+      @keyframes animation {
+        0% {
+          border-radius: 40% 50% 50% 40%/40% 45% 50% 50%;
+          transform: rotate(0deg);
+        }
+
+        50% {
+          transform: rotate(180deg);
+          border-radius: 50% 55% 45% 50%/50% 50% 45% 40%;
+        }
+
+        100% {
+          transform: rotate(360deg);
+          border-radius: 40% 45% 50% 40%/40% 45% 45% 50%;
+        }
+      }
+
+      #clock {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #hour {
+        position: absolute;
+        height: 4px;
+        width: 15%;
+        background: #c0bcac;
+        border-radius: 5px;
+        left: 35%;
+        top: calc(50% - 2px);
+        transform: rotate(0deg);
+        transform-origin: right center;
+      }
+
+      #minute {
+        position: absolute;
+        height: 4px;
+        width: 25%;
+        background: #c0bcac;
+        border-radius: 5px;
+        left: 25%;
+        top: calc(50% - 2px);
+        transform: rotate(10deg);
+        transform-origin: right center;
+      }
+
+      #second {
+        position: absolute;
+        height: 1px;
+        width: 30%;
+        background: #ca2323;
+        border-radius: 5px;
+        left: 20%;
+        top: calc(50% - 1px);
+        transform: rotate(20deg);
+        transform-origin: right center;
+      }
+      .box {
+        width: 10px;
+        height: 10px;
+        /* background: #ca2323; */
+        position: absolute;
+        /* border-radius: 50%; */
+        color: #ca2323;
+        font-size: 16px;
+        text-shadow: 3px 3px 3px rgba(214, 136, 136, 0.952);
+      }
+      .box1 {
+        left: calc(50% - 5px);
+        top: 10%;
+      }
+      .box2 {
+        left: 85%;
+        top: 45%;
+      }
+      .box3 {
+        left: calc(50% - 5px);
+        top: 85%;
+      }
+      .box4 {
+        left: 15%;
+        top: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container h-100">
+      <div class="items">
+        <div class="text">
+          <!-- <div id="time"></div>
+                <div id="date"></div> -->
+          <h2>time</h2>
+          <div id="time"></div>
+          <h2>date</h2>
+          <div id="date"></div>
+        </div>
+      </div>
+      <div class="items">
+        <div id="clock">
+          <div class="flower flower1"></div>
+          <div class="flower flower2"></div>
+          <div class="flower flower3"></div>
+          <div class="flower flower4"></div>
+          <div class="flower flower5"></div>
+          <div class="flower flower6"></div>
+          <div class="flower flower7"></div>
+          <div class="flower flower8"></div>
+          <div class="circle"></div>
+          <div id="hour"></div>
+          <div id="minute"></div>
+          <div id="second"></div>
+          <div class="box box1">12</div>
+          <div class="box box2">3</div>
+          <div class="box box3">6</div>
+          <div class="box box4">9</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const now = new Date();
+      const hour = document.getElementById("hour");
+      const minute = document.getElementById("minute");
+      const second = document.getElementById("second");
+      const time = document.getElementById("time");
+      const date = document.getElementById("date");
+
+      const setText = () => {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+        const y = now.getFullYear();
+        const mn = now.getMonth() + 1;
+        const d = now.getDate();
+
+        time.innerText = h + ":" + m + ":" + s;
+        date.innerText = y + "-" + mn + "-" + d;
+      };
+
+      const setColock = () => {
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds();
+
+        hour.style.transform = `rotate(${h * 30 + 90}deg)`;
+        minute.style.transform = `rotate(${m * 6 + 90}deg)`;
+        second.style.transform = `rotate(${s * 6 + 90}deg)`;
+      };
+
+      setInterval(setColock, 1000);
+      setColock();
+      setInterval(setText, 1000);
+      setText();
+    </script>
+  </body>
+</html>
